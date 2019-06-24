@@ -18,7 +18,7 @@ Scroll down to see [English version](#unpredictable-interaction-crashing-your-ap
 **How to crash your application?**
 
 1. Open `ReportRepositoryTest` and uncomment the first line in method `test` (comment the 2nd one)
-2. Specify path to file of about 70-72 Мб (tested on JDK 11).
+2. Specify path to file of about 70-72 Mb (tested on JDK 11).
 3. Run the test with -Xmx1g (max heap size is limited up to 1 Gb).
 4. See explanation on [habr.com](habr.com) (the link will be added later) or detect it yourself.
 
