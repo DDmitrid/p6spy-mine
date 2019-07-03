@@ -12,6 +12,8 @@ Scroll down to see [English version](#unpredictable-interaction-crashing-your-ap
 
 Чтобы исправить положение, откройте файл `spy.properties` и раскройте последнюю строку.
 
+----------------------------------------------------------------------------------------------------------
+
 #### Unpredictable interaction crashing your app
 
 **How to crash your application?**
