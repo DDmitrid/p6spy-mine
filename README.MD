@@ -16,7 +16,7 @@ Scroll down to see [English version](#unpredictable-interaction-crashing-your-ap
 
 #### Unpredictable interaction crashing your app
 
-**How to crash your application?**
+**How to crash the application?**
 
 0. Run `FileCreator`: it creates a text file stuffed with random bytes
 1. Run `ReportRepositoryTest` with these VM options: `-Xmx1g -XX:+HeapDumpOnOutOfMemoryError`
