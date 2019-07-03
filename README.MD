@@ -4,10 +4,9 @@ Scroll down to see [English version](#unpredictable-interaction-crashing-your-ap
 
 **Как положить приложение?**
 
-1. Откройте `ReportRepositoryTest` и откройте первую строчку в методе `test` (закрыв 2-ю)
-2. Укажите путь к файлу размером не менее 70-72 Мб (проверено на JDK 11).
-3. Запустите тест с аргументом ВМ -Xmx1g (размер кучи ограничен 1 Гб).
-4. Объяснение см. в статье на Хабре (ссылка будет добавлена) или попробуйте догадаться самостоятельно.
+0. Запустите `FileCreator`: то создаст файл, забитый случайными данными нужного объёма 
+1. Запустите `ReportRepositoryTest` со следующими настройками ВМ: `-Xmx1g -XX:+HeapDumpOnOutOfMemoryError`
+2. Объяснение см. в статье на Хабре (ссылка будет добавлена) или попробуйте догадаться самостоятельно.
 
 В качестве подсказки см. содержимое `spy.log`, который появится в корне проекта после запуска теста. 
 
@@ -17,11 +16,10 @@ Scroll down to see [English version](#unpredictable-interaction-crashing-your-ap
 
 **How to crash your application?**
 
-1. Open `ReportRepositoryTest` and uncomment the first line in method `test` (comment the 2nd one)
-2. Specify path to file of about 70-72 Mb (tested on JDK 11).
-3. Run the test with -Xmx1g (max heap size is limited up to 1 Gb).
-4. See explanation on [habr.com](habr.com) (the link will be added later) or detect it yourself.
+0. Run `FileCreator`: it creates a text file stuffed with random bytes
+1. Run `ReportRepositoryTest` with these VM options: `-Xmx1g -XX:+HeapDumpOnOutOfMemoryError`
+2. See explanation on [habr.com](habr.com) (the link will be added later) or detect it yourself.
 
-For a clue see the contents `spy.log` which appears in project root when the test is run.
+For a clue see the contents of `spy.log` which appears in project root when the test is run.
 
 To fix this open `spy.properties` and uncomment the last line.

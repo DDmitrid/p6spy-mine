@@ -12,3 +12,7 @@ build/
 *.ipr
 out/
 
+### Output ###
+spy.log
+*.txt
+*.hprof

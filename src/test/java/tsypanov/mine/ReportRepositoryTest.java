@@ -11,8 +11,6 @@ import tsypanov.mine.entity.ReportEntity;
 import tsypanov.mine.repository.ReportRepository;
 
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 import static java.util.Objects.requireNonNull;
 import static org.apache.commons.io.IOUtils.toByteArray;
@@ -28,8 +26,7 @@ class ReportRepositoryTest {
 
   @Test
   void test() throws Exception {
-//  try (InputStream resourceAsStream = Files.newInputStream(Path.of("/home/sergei/Downloads/ideaIU-2018.3.tar.gz"))) {
-    try (InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("spy.properties")) {
+    try (InputStream resourceAsStream = getClass().getClassLoader().getResourceAsStream("random-file.txt")) {
       byte[] reportContent = toByteArray(requireNonNull(resourceAsStream));
       ReportEntity reportEntity = new ReportEntity(reportContent);
       reportRepository.save(reportEntity);
