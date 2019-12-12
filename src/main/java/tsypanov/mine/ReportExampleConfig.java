@@ -8,12 +8,17 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 import tsypanov.mine.entity.ReportEntity;
 import tsypanov.mine.repository.ReportRepository;
+import tsypanov.mine.service.ReportService;
+import tsypanov.mine.service.ReportServiceImpl;
 
 import javax.sql.DataSource;
 
 @EnableAutoConfiguration
+@EnableTransactionManagement
 @EntityScan(basePackageClasses = ReportEntity.class)
 @EnableJpaRepositories(basePackageClasses = ReportRepository.class)
 public class ReportExampleConfig {
@@ -26,4 +31,8 @@ public class ReportExampleConfig {
     return new P6DataSource(origin);
   }
 
+  @Bean
+  public ReportService reportService(ReportRepository repository) {
+    return new ReportServiceImpl(repository);
+  }
 }

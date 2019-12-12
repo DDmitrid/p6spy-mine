@@ -1,0 +1,27 @@
+Before (JDK 13, 1Mb)
+
+Benchmark                                            Mode  Cnt         Score         Error   Units
+SaveBenchmark.save                                   avgt  100        19,572 ±       2,863   ms/op
+SaveBenchmark.save:·gc.alloc.rate                    avgt  100      1144,255 ±      91,307  MB/sec
+SaveBenchmark.save:·gc.alloc.rate.norm               avgt  100  26798290,203 ±    6680,022    B/op
+SaveBenchmark.save:·gc.churn.PS_Eden_Space           avgt  100      1154,906 ±     106,749  MB/sec
+SaveBenchmark.save:·gc.churn.PS_Eden_Space.norm      avgt  100  27236691,076 ± 1757795,980    B/op
+SaveBenchmark.save:·gc.churn.PS_Survivor_Space       avgt  100         3,602 ±       1,062  MB/sec
+SaveBenchmark.save:·gc.churn.PS_Survivor_Space.norm  avgt  100     92848,988 ±   37253,441    B/op
+SaveBenchmark.save:·gc.count                         avgt  100       264,000                counts
+SaveBenchmark.save:·gc.time                          avgt  100     14295,000                    m
+
+After (JDK 13, 1Mb)
+
+Benchmark                                            Mode  Cnt         Score         Error   Units
+SaveBenchmark.save                                   avgt  100        11,247 ±       3,648   ms/op
+SaveBenchmark.save:·gc.alloc.rate                    avgt  100      2028,455 ±     129,392  MB/sec
+SaveBenchmark.save:·gc.alloc.rate.norm               avgt  100  26274807,650 ±    6795,674    B/op
+SaveBenchmark.save:·gc.churn.PS_Eden_Space           avgt  100      2032,989 ±     140,684  MB/sec
+SaveBenchmark.save:·gc.churn.PS_Eden_Space.norm      avgt  100  26437365,260 ± 1008805,174    B/op
+SaveBenchmark.save:·gc.churn.PS_Old_Gen              avgt  100         0,001 ±       0,001  MB/sec
+SaveBenchmark.save:·gc.churn.PS_Old_Gen.norm         avgt  100        10,123 ±      13,036    B/op
+SaveBenchmark.save:·gc.churn.PS_Survivor_Space       avgt  100         6,110 ±       2,189  MB/sec
+SaveBenchmark.save:·gc.churn.PS_Survivor_Space.norm  avgt  100     89320,206 ±   39054,122    B/op
+SaveBenchmark.save:·gc.count                         avgt  100       461,000                counts
+SaveBenchmark.save:·gc.time                          avgt  100     25834,000                    ms
